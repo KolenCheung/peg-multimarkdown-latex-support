@@ -1,10 +1,7 @@
 \usepackage{xltxtra} % include fontspec
 
-% Use cm-unicode as default
+% Use cm-unicode as default. Download at http://cm-unicode.sourceforge.net
+% This font is not without problem, e.g. missing `{}` characters. See more at https://en.wikipedia.org/wiki/Computer_Modern#Derived_versions
 \setmainfont{CMU Serif}
 \setsansfont{CMU Sans Serif}
-\setmonofont{CMU Typewriter Text} % This one is not mature enough. Characters like "{}" is absent. In the future once it is mature, it would be better to set the main/sans/mono to CMU and NOT switching from Latin to Greek or vice versa.
-
-
-% Font Features
-\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
+\setmonofont{CMU Typewriter Text}
