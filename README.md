@@ -13,7 +13,7 @@ This is folk from Fletcher's [peg-multimarkdown-latex-support](https://github.co
 ## What's New ##
 
 
-### `mmd-load-unicode-related` ###
+### `mmd-load-lang-unicode` ###
 
 NOTE: the following doesn't work for me anymore. This use `ucharclasses`, but it doesn't work on my Mac anymore, which has OS X El Capitan and the latest MacTex in 2015. Note that my original implementation in `mmd-load-unicode-related` only included Chinese, Greek, Hebrew, although should be extendable to anything `ucharclasses` support. In the next section I include an alternative way to include Greek and Chinese.
 
@@ -34,9 +34,9 @@ These are all languages I need to use. Few free to expand this to support other 
 
 I am very inexperienced in how LaTeX handle this (via `fontspec`), so I have a lot of trials and errors. So my file has a lot of comments. Feel free to clean things out and put more explanation there.
 
-### `mmd-load-greek-chinese` ###
+### `mmd-load-lang-chinese` & `mmd-load-lang-greek` ###
 
-This one use `CMU` and `XeCJK` to support Greek and Chinese respectively.
+These use `CMU` and `XeCJK` to support Greek and Chinese respectively.
 
 The fonts CMU stands for Computer Modern Unicode and is intended to replicate the default font LaTeX used, Computer Modern, and adding unicode support. However it isn't a complete project. In my experience it misses some character like `<>`. You can get the CMU font [here](http://cm-unicode.sourceforge.net).
 

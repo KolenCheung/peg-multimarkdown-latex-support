@@ -1,0 +1,19 @@
+% ucharclasses
+\usepackage[Greek, Hebrew]{ucharclasses}
+\usepackage{xltxtra} % include fontspec. fontspec doc claims most of xltxtra is incorporated into fontspec
+
+\usepackage{unicode-math}
+
+% XeCJK
+\usepackage{xeCJK}
+\setCJKmainfont[AutoFakeBold, AutoFakeSlant]{STFangsong} % for Mac. Windows: FangSong
+\setCJKsansfont[AutoFakeSlant]{PingFang TC} % for Mac. Windows: "Microsoft YaHei New"/"Microsoft Yahei"
+\setCJKmonofont[AutoFakeBold, AutoFakeSlant]{STKaiti} % for Mac. Windows: KaiTi
+
+\newcommand{\mylatin}{\renewcommand\rmdefault{lmr}\renewcommand\sfdefault{lmss}\renewcommand\ttdefault{lmtt}}
+
+% Greek
+\setTransitionsForGreek{\fontspec{CMU Serif}}{\mylatin} % alt: Palatino Linotype
+
+% Hebrew is the trouble maker and has to use the setRTL and setLTR in this specific way: { ... \setRTL}{ ... \setLTR}. And even so, words are RTL but sentences are LTR due to spaces between words that reset the ordering.
+\setTransitionsFor{Hebrew}{\fontspec[AutoFakeBold, AutoFakeSlant]{Narkisim}\setRTL}{\mylatin \setLTR} % alt: Tahoma
