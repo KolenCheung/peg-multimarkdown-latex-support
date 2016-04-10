@@ -15,24 +15,22 @@ This is folk from Fletcher's [peg-multimarkdown-latex-support](https://github.co
 
 ### `mmd-load-lang-unicode` ###
 
-NOTE: the following doesn't work for me anymore. This use `ucharclasses`, but it doesn't work on my Mac anymore, which has OS X El Capitan and the latest MacTex in 2015. Note that my original implementation in `mmd-load-unicode-related` only included Chinese, Greek, Hebrew, although should be extendable to anything `ucharclasses` support. In the next section I include an alternative way to include Greek and Chinese.
-
 Provide Automated unicode support in XeLaTeX, see comments in the file.
 
 This load the package `xltxtra`, which loads the `fontspec`, which
 
 > pro­vides an au­to­matic and uni­fied in­ter­face to fea­ture-rich AAT and OpenType fonts through the NFSS in ... XeLaTeX [^ <http://ctan.org/pkg/fontspec>]
 
-The rest of the file is to set things up such that font transitions between the followings are automated:
+The rest of the file is to setup `ucharclasses` such that font transitions between the followings are automated:
 
-- Latin (include English...)
+- Latin (include English)
 - Greek (include `unicode-math` where some of us like to use unicode Greek letters rather than say `\alpha`)
 - Hebrew (Right to left language, hence the `bidi` used above)
 - CJK (Chinese, Japanese, Korean)
 
-These are all languages I need to use. Few free to expand this to support other languages.
+One can change the font choice as needed in the file.
 
-I am very inexperienced in how LaTeX handle this (via `fontspec`), so I have a lot of trials and errors. So my file has a lot of comments. Feel free to clean things out and put more explanation there.
+These are all languages I need to use. Following the example in the files, other languages (that `ucharclasses` support) can be supported. See [CTAN: Package ucharclasses](http://www.ctan.org/pkg/ucharclasses) and [CTAN: Package fontspec](http://www.ctan.org/pkg/fontspec) for details. However, **do not follow the example** given in `ucharclasses`'s manual. See [Remove \fontspec from the examples · Issue #7 · Pomax/ucharclasses](https://github.com/Pomax/ucharclasses/issues/7). You can follow my example in the file.
 
 ### `mmd-load-lang-chinese` & `mmd-load-lang-greek` ###
 
